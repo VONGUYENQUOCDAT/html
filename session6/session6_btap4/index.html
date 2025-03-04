@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #3dad09;
+            color: white;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .nav {
+            text-align: center;
+            padding: 10px;
+        }
+        .nav a {
+            font-size: 10px;
+            margin: 0 10px;
+            color: blue;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+        }
+        .sidebar {
+            width: 25%;
+            padding: 15px;
+            border: 1px solid #333;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: blue;
+        }
+        .post {
+            padding-left: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .post img {
+            width: 250px;
+            display: block;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>My Blog</div>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html">Categories</a>
+            <a href="index.html">About</a>
+        </div>
+    </div>
+    <div class="container" style="display: flex;">
+        <div class="sidebar">
+            <h3>Chuyên mục</h3>
+            <ul>
+                <li><a href="index.html">CSS</a></li>
+                <li><a href="index.html">HTML</a></li>
+                <li><a href="index.html">Javascript</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="post">
+                <h3>Bài viết 1</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWphenrFmicwysLQ7LtQdOxkPkS0EbrcckaA&s" alt="">
+                <p>Đây là nội dung bài viết 1.</p>
+                <hr style="width: 1000%;">
+            </div>
+            <div class="post">
+                <h3>Bài viết 2</h3>
+                <img src="https://aphoto.vn/wp-content/uploads/2019/01/anhdep6.jpg" alt="">
+                <p>Đây là nội dung bài viết 2.</p>
+                <hr style="width: 1000%;">
+            </div>
+        </div>
+    </div>
+    <div class="footer">Liên hệ: <a href="mailto:email@email.example.com" style="text-decoration: none;color: white;">email.example.com</a></div>
+</body>
+</html>
