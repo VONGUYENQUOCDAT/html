@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .article-container {
+            width: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            position: relative;
+        }
+        .tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgb(46, 46, 46);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            border: 1px solid white;
+        }
+        .article-content {
+            padding: 15px;
+        }
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .author img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .article-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .article-desc {
+            font-size: 15px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <div style="position: relative;">
+            <img src="https://cdn.nba.com/manage/2025/03/richards.jpg" alt="Bài viết" class="article-image">
+            <span class="tag">Basketball</span>
+        </div>
+        <div class="article-content">
+            <div class="author">
+                <img src="https://media.licdn.com/dms/image/v2/C5603AQEgUZlvxF9dgQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1609313439473?e=2147483647&v=beta&t=yfELo4sEeXHHDOIGAdYmUiewulEsH5bJ9KsV-gy5mgw" alt="Tác giả">
+                <span>Jake Will.</span>
+            </div>
+            <div class="article-date">04 June 2023</div>
+            <div class="article-title">5 Exercises Basketball Players Should Be Using To Develop Strength</div>
+            <div class="article-desc">This article was written by Jake Willhoite from Healthlisted.com. Strength in basketball isn’t all about a massive body mass or ripped muscles.</div>
+        </div>
+    </div>
+</body>
+</html>

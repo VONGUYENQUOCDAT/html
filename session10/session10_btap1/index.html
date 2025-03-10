@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e0e0e0;
+            padding: 15px 50px;
+        }
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: "Dancing Script", cursive;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: gray;
+            font-size: 16px;
+        }
+        .search-btn {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Sport <span>News</span></div>
+        <ul class="nav-links">
+            <li><a href="#"><strong style="color: black;">Home</strong></a></li>
+            <li><a href="#">Category</a></li>
+            <li><a href="#">Trending News</a></li>
+            <li><a href="#">Recent News</a></li>
+            <li><a href="#">Clubs Ranking</a></li>
+            <li><a href="#">Sports Article</a></li>
+        </ul>
+        <button class="search-btn">
+            🔍 Search
+        </button>
+    </nav>
+</body>
+</html>
