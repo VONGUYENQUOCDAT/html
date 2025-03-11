@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .slider-container {
+            width: 800px;
+            background-color: rgb(228, 228, 228);
+        }
+        .slider img{
+            width: 800px;
+            height: 400px;
+        }
+        .category {
+            font-size: 25px;
+            position: relative;
+            bottom: 360px;
+            left: 30px;
+            color: white;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .text {
+            position: absolute;
+            top: 220px;
+            width: 600px;
+            left: 40px;
+            color: white;
+        }
+        h2 {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .control {
+            font-size: 25px;
+            display: flex;
+            width: 400px;
+            justify-content: space-evenly;
+            padding-left: 400px;
+            padding-bottom: 15px;
+        }
+        .page {
+            color: rgb(154,155,157);
+        }
+        .next {
+            background-color: black;
+            color: white;
+            width: 45px;
+            border-radius: 5px;
+        }
+        .prev {
+            background-color: rgb(156, 156, 156);
+            border: 1px solid rgb(156, 156, 156);
+            color: white;
+            width: 45px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div>
+                <img src="https://media.assettype.com/freepressjournal/2023-06/c2e80143-e43d-431e-afc0-e01091961590/0812_20211207193616_FBL_EUR_C1_PSG_BRUGGE_AFP_9U826F.jpg" alt="Football">
+                <div class="slide-content">
+                    <span class="category">Football</span>
+                    <div class="text">
+                        <p class="date">Agence France-Presse - 04 June 2023</p>
+                        <h2>LIONEL MESSI LEAVING LIGUE 1 TEAM PARIS SAINT-GERMAIN, CLUB CONFIRMS</h2>
+                        <p>The EuroLeague Finals Top Scorer is the individual award for the player that gained the highest points in the EuroLeague Finals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control">
+            <button class="prev">&larr;</button>
+                <div class="page">1</div>
+                <div class="page">2</div>
+                <div class="page">3</div>
+                <div class="page">4</div>
+            <button class="next">&rarr;</button>
+        </div>
+    </div>
+</body>
+</html>
