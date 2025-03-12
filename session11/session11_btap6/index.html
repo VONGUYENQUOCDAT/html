@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        @media screen and (min-width: 1200px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .header {
+                height: 200px;
+                background-color: rgb(178,214,255);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .feature1 {
+                height: 300px;
+                background-color: rgb(245,207,141);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 3);
+            }
+            .feature2 {
+                height: 300px;
+                background-color: rgb(200,198,250);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 3);
+            }
+            .feature3 {
+                height: 300px;
+                background-color: rgb(240,154,157);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 3);
+            }
+            .signup {
+                height: 100px;
+                background-color: rgb(215,233,254);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+            .content {
+                height: 250px;
+                background-color: rgb(234,237,240);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1200px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .header {
+                height: 200px;
+                background-color: rgb(178,214,255);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .feature1 {
+                height: 300px;
+                background-color: rgb(245,207,141);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 2);
+                order: 1;
+            }
+            .feature2 {
+                height: 300px;
+                background-color: rgb(200,198,250);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 2);
+                order: 3;
+            }
+            .feature3 {
+                height: 300px;
+                background-color: rgb(240,154,157);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 2);
+                order: 2;
+            }
+            .signup {
+                height: 300px;
+                background-color: rgb(215,233,254);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 2);
+            }
+            .content {
+                height: 250px;
+                background-color: rgb(234,237,240);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                order: -1;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .header {
+                height: 200px;
+                background-color: rgb(178,214,255);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .feature1 {
+                height: 300px;
+                background-color: rgb(245,207,141);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 1);
+                order: 1;
+            }
+            .feature2 {
+                height: 300px;
+                background-color: rgb(200,198,250);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 1);
+                order: 3;
+            }
+            .feature3 {
+                height: 300px;
+                background-color: rgb(240,154,157);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 1);
+                order: 2;
+            }
+            .signup {
+                height: 300px;
+                background-color: rgb(215,233,254);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100% / 1);
+            }
+            .content {
+                height: 250px;
+                background-color: rgb(234,237,240);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="height: 30px; background-color: rgb(89,148,219); order: -1;"></div>
+        <div class="header">[HEADER]</div>
+        <div style="display: flex; flex-wrap: wrap;">
+        <div class="feature1">[FEATURE]</div>
+        <div class="feature2">[FEATURE]</div>
+        <div class="feature3">[FEATURE]</div>
+        <div class="signup">[SIGN UP]</div>
+        <div class="content">[CONTENT]</div>
+        </div>
+    </div>
+</body>
+</html>
