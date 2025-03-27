@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let matrix = [];
+        let choice;
+        do {
+            choice = prompt(
+                "Chọn một chức năng:\n" +
+                "1. Nhập mảng 2 chiều\n" +
+                "2. Hiển thị mảng 2 chiều\n" +
+                "3. Tính tổng các phần tử trong mảng\n" +
+                "4. Tính tổng đường chéo chính\n" +
+                "5. Tính tổng đường chéo phụ\n" +
+                "6. Tính trung bình cộng các phần tử trong một hàng hoặc một cột\n" +
+                "7. Thoát"
+            );
+            switch (choice) {
+                case "1":
+                    let rows = Number(prompt("Nhập số hàng của mảng: "));
+                    let cols = Number(prompt("Nhập số cột của mảng: "));
+                    matrix = [];
+                    for (let i = 0; i < rows; i++) {
+                        let row = prompt(`Nhập hàng ${i + 1}, cách nhau bằng dấu cách:`).split(" ").map(Number);
+                        if (row.length === cols) {
+                            matrix.push(row);
+                        } else {
+                            alert("Số phần tử không khớp với số cột đã nhập, vui lòng nhập lại hàng này.");
+                            i--;
+                        }
+                    }
+                    break;
+                case "2":
+                    alert("Mảng 2 chiều:\n" + matrix.map(row => row.join(", ")).join("\n"));
+                    break;
+                case "3":
+                    let sum = matrix.flat().reduce((acc, num) => acc + num, 0);
+                    alert("Tổng các phần tử trong mảng: " + sum);
+                    break;
+                case "4":
+                    let mainDiagonalSum = 0;
+                    for (let i = 0; i < Math.min(matrix.length, matrix[0].length); i++) {
+                        mainDiagonalSum += matrix[i][i];
+                    }
+                    alert("Tổng đường chéo chính: " + mainDiagonalSum);
+                    break;
+                case "5":
+                    let secondaryDiagonalSum = 0;
+                    for (let i = 0; i < Math.min(matrix.length, matrix[0].length); i++) {
+                        secondaryDiagonalSum += matrix[i][matrix[0].length - 1 - i];
+                    }
+                    alert("Tổng đường chéo phụ: " + secondaryDiagonalSum);
+                    break;
+                case "6":
+                    let type = prompt("Bạn muốn tính trung bình cộng của hàng (h) hay cột (c)?").toLowerCase();
+                    if (type === "h") {
+                        let rowIndex = Number(prompt("Nhập chỉ số hàng cần tính trung bình (bắt đầu từ 0):"));
+                        if (rowIndex >= 0 && rowIndex < matrix.length) {
+                            let avg = matrix[rowIndex].reduce((sum, num) => sum + num, 0) / matrix[rowIndex].length;
+                            alert(`Trung bình cộng của hàng ${rowIndex}: ${avg}`);
+                        } else {
+                            alert("Chỉ số hàng không hợp lệ.");
+                        }
+                    } else if (type === "c") {
+                        let colIndex = Number(prompt("Nhập chỉ số cột cần tính trung bình (bắt đầu từ 0):"));
+                        if (colIndex >= 0 && colIndex < matrix[0].length) {
+                            let sumCol = matrix.reduce((sum, row) => sum + row[colIndex], 0);
+                            let avgCol = sumCol / matrix.length;
+                            alert(`Trung bình cộng của cột ${colIndex}: ${avgCol}`);
+                        } else {
+                            alert("Chỉ số cột không hợp lệ.");
+                        }
+                    } else {
+                        alert("Lựa chọn không hợp lệ.");
+                    }
+                    break;
+                case "7":
+                    alert("Chương trình kết thúc.");
+                    break;
+                default:
+                    alert("Lựa chọn không hợp lệ, vui lòng nhập lại.");
+            }
+        } while (choice !== "7");
+    </script>
+</body>
+</html>
