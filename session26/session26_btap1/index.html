@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function filterArray(arr) {
+            if(!Array.isArray(arr) || arr.some(isNaN)) {
+                console.log("Du lieu khong hop le");
+                return;
+            }
+            let result = arr.filter(num => num >= 10);
+            if(result.length > 0){
+                console.log(result);
+            } else {
+                console.log("Mang khong co phan tu nao");
+            }
+        }
+        filterArray([1, 22, 10, 9, 8]);
+    </script>
+</body>
+</html>

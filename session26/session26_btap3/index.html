@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function filterArray(arr) {
+            if(!Array.isArray(arr)) {
+                console.log("Du lieu khong hop le");
+                return;
+            }
+            let result = arr.filter(str => str.includes("@") && !str.includes(" "));
+            if(result.length > 0){
+                console.log(result);
+            } else {
+                console.log("Mang khong co phan tu nao");
+            }
+        }
+        filterArray(["john.doe@gmail.com", "invalidemail.com", "hello@domain.net", "  @out.com"]);
+    </script>
+</body>
+</html>

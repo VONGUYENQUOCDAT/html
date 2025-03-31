@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function squareAndFilterEvens(arr) {
+            if (!Array.isArray(arr) || arr.some(num => typeof num !== 'number')) {
+                console.log("Dữ liệu không hợp lệ");
+                return;
+            }
+            let result = arr.map(num => num ** 2).filter(num => num % 2 === 0);
+            if (result.length > 0) {
+                console.log(result);
+            } else {
+                console.log("Mảng không có dữ liệu");
+            }
+        }
+        squareAndFilterEvens([2, 5, 10]);
+    </script>
+</body>
+</html>
