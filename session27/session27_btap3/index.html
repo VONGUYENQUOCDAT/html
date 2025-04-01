@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function circleArea(radius) {
+            return Math.PI * Math.pow(radius, 2);
+        }
+        function circlePerimeter(radius) {
+            return 2 * Math.PI * radius;
+        }
+        function rectangleArea(width, height) {
+            return width * height;
+        }
+        function rectanglePerimeter(width, height) {
+            return 2 * (width + height);
+        }
+        function geometryCalculator() {
+            let exit = false;
+            while (!exit) {
+                let choice = prompt("Chọn chức năng:\n1. Tính diện tích hình tròn\n2. Tính chu vi hình tròn\n3. Tính diện tích hình chữ nhật\n4. Tính chu vi hình chữ nhật\n5. Thoát");
+
+                switch (choice) {
+                    case "1":
+                        let radius1 = Number(prompt("Nhập bán kính hình tròn:"));
+                        alert("Diện tích hình tròn: " + circleArea(radius1).toFixed(2));
+                        break;
+                    case "2":
+                        let radius2 = Number(prompt("Nhập bán kính hình tròn:"));
+                        alert("Chu vi hình tròn: " + circlePerimeter(radius2).toFixed(2));
+                        break;
+                    case "3":
+                        let width1 = Number(prompt("Nhập chiều rộng hình chữ nhật:"));
+                        let height1 = Number(prompt("Nhập chiều dài hình chữ nhật:"));
+                        alert("Diện tích hình chữ nhật: " + rectangleArea(width1, height1).toFixed(2));
+                        break;
+                    case "4":
+                        let width2 = Number(prompt("Nhập chiều rộng hình chữ nhật:"));
+                        let height2 = Number(prompt("Nhập chiều dài hình chữ nhật:"));
+                        alert("Chu vi hình chữ nhật: " + rectanglePerimeter(width2, height2).toFixed(2));
+                        break;
+                    case "5":
+                        alert("Thoát chương trình");
+                        exit = true;
+                        break;
+                    default:
+                        alert("Lựa chọn không hợp lệ, vui lòng nhập lại.");
+                }
+            }
+        }
+        geometryCalculator();
+    </script>
+</body>
+</html>

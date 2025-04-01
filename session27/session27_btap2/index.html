@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let students = [];
+        function addStudents() {
+            let count = Number(prompt("Nhập số lượng sinh viên:"));
+            for (let i = 0; i < count; i++) {
+                let name = prompt(`Nhập tên sinh viên thứ ${i + 1}:`);
+                students.push(name);
+            }
+        }
+        function displayStudents() {
+            if (students.length === 0) {
+                alert("Danh sách sinh viên trống.");
+                return;
+            }
+            alert("Danh sách sinh viên:\n" + students.join("\n"));
+        }
+        function findStudent() {
+            let name = prompt("Nhập tên sinh viên cần tìm:");
+            let found = students.filter(student => student.toLowerCase().includes(name.toLowerCase()));
+            if (found.length > 0) {
+                alert("Sinh viên tìm thấy:\n" + found.join("\n"));
+            } else {
+                alert("Không tìm thấy sinh viên.");
+            }
+        }
+        function removeStudent() {
+            let name = prompt("Nhập tên sinh viên cần xóa:");
+            let index = students.findIndex(student => student.toLowerCase() === name.toLowerCase());
+            if (index !== -1) {
+                students.splice(index, 1);
+                alert("Sinh viên đã được xóa.");
+            } else {
+                alert("Không tìm thấy sinh viên để xóa.");
+            }
+        }
+        function studentManagement() {
+            let exit = false;
+            while (!exit) {
+                let choice = prompt("Chọn chức năng:\n1. Nhập danh sách sinh viên\n2. Hiển thị danh sách sinh viên\n3. Tìm sinh viên theo tên\n4. Xóa sinh viên\n5. Thoát");
+
+                switch (choice) {
+                    case "1":
+                        addStudents();
+                        break;
+                    case "2":
+                        displayStudents();
+                        break;
+                    case "3":
+                        findStudent();
+                        break;
+                    case "4":
+                        removeStudent();
+                        break;
+                    case "5":
+                        alert("Thoát chương trình");
+                        exit = true;
+                        break;
+                    default:
+                        alert("Lựa chọn không hợp lệ, vui lòng nhập lại.");
+                }
+            }
+        }
+        studentManagement();
+    </script>
+</body>
+</html>
