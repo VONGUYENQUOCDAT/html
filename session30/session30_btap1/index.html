@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let products = [
+            { id: 1, name: "mèn mén", price: 20000, quantity: 20, category: "món ăn dân tộc Mông" },
+            { id: 2, name: "mứt", price: 80000, quantity: 21, category: "món ăn dân tộc Kinh" },
+            { id: 3, name: "cơm lam", price: 40000, quantity: 15, category: "món ăn dân tộc Mông" },
+            { id: 4, name: "bánh đậu xanh", price: 60000, quantity: 30, category: "món ăn dân tộc Kinh" }
+        ];
+        let cart = [];
+        function showByCategory() {
+            let cat = prompt("Nhập tên danh mục (vd: món ăn dân tộc Mông):").toLowerCase();
+            let filtered = products.filter(p => p.category.toLowerCase() === cat);
+            if (filtered.length === 0) {
+                alert("Không có sản phẩm thuộc danh mục này.");
+            } else {
+                let text = "📦 Danh sách sản phẩm:\n";
+                filtered.forEach(p => {
+                    text += `${p.id} - ${p.name} - ${p.price}đ - SL: ${p.quantity}\n`;
+                });
+                alert(text);
+            }
+        }
+        function buyProduct() {
+            let id = parseInt(prompt("Nhập ID sản phẩm muốn mua:"));
+            let product = products.find(p => p.id === id);
+            if (!product) {
+                alert("Sản phẩm không tồn tại trong cửa hàng.");
+                return;
+            }
+            let buyQty = parseInt(prompt(`Sản phẩm "${product.name}" hiện có ${product.quantity}. Nhập số lượng muốn mua:`));
+            if (buyQty <= 0 || isNaN(buyQty)) {
+                alert("Số lượng không hợp lệ.");
+                return;
+            }
+            if (buyQty > product.quantity) {
+                alert("Không đủ hàng trong kho.");
+                return;
+            }
+            product.quantity -= buyQty;
+            let cartItem = cart.find(p => p.id === product.id);
+            if (cartItem) {
+                cartItem.quantity += buyQty;
+            } else {
+                cart.push({ ...product, quantity: buyQty });
+            }
+            alert("Mua thành công!");
+        }
+        function sortProducts(order = "asc") {
+            let sorted = [...products].sort((a, b) =>
+                order === "asc" ? a.price - b.price : b.price - a.price
+            );
+
+            let result = (order === "asc" ? "Tăng dần:\n" : "Giảm dần:\n");
+            sorted.forEach(p => {
+                result += `${p.id} - ${p.name} - ${p.price}đ - SL: ${p.quantity}\n`;
+            });
+            alert(result);
+        }
+        function calculateCart() {
+            let total = 0;
+            let result = "Giỏ hàng:\n";
+            cart.forEach(p => {
+                result += `${p.name} x${p.quantity} = ${p.quantity * p.price}đ\n`;
+                total += p.quantity * p.price;
+            });
+            result += `Tổng tiền: ${total}đ`;
+            alert(result);
+        }
+        function menu() {
+            let choice;
+            do {
+                choice = prompt(
+                    `=== ỨNG DỤNG MUA HÀNG ===
+1. Hiển thị sản phẩm theo danh mục
+2. Mua sản phẩm (nhập ID)
+3. Sắp xếp sản phẩm theo giá tăng dần
+4. Sắp xếp sản phẩm theo giá giảm dần
+5. Tính tiền trong giỏ hàng
+6. Thoát
+
+Nhập lựa chọn (1-6):`
+                );
+                switch (choice) {
+                    case "1":
+                        showByCategory();
+                        break;
+                    case "2":
+                        buyProduct();
+                        break;
+                    case "3":
+                        sortProducts("asc");
+                        break;
+                    case "4":
+                        sortProducts("desc");
+                        break;
+                    case "5":
+                        calculateCart();
+                        break;
+                    case "6":
+                        alert("👋 Cảm ơn bạn đã sử dụng ứng dụng!");
+                        break;
+                    default:
+                        alert("Vui lòng chọn từ 1 đến 6.");
+                }
+            } while (choice !== "6");
+        }
+        menu();
+    </script>
+</body>
+</html>
