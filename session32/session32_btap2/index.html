@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 50px;
+            font-size: 24px;
+        }
+        button {
+            font-size: 30px;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="demClick()">Bấm vào tôi</button>
+    <p id="soLanBam">Số lần bấm: 0</p>
+    <script>
+        let dem = 0;
+        function demClick() {
+            dem++;
+            document.getElementById("soLanBam").innerText = "Số lần bấm: " + dem;
+        }
+    </script>
+</body>
+</html>

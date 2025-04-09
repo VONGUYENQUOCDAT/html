@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 20px;
+            padding: 30px;
+        }
+        input, button {
+            font-size: 18px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        #thongBao {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="email" placeholder="Nhập email">
+    <p id="thongBao"></p>
+    <button onclick="kiemTraEmail()">check</button>
+    <script>
+        function kiemTraEmail() {
+            const email = document.getElementById("email").value.trim();
+            const thongBao = document.getElementById("thongBao");
+            const regex = /^[^\s@]+@[^\s@]+\.(com|vn)$/;
+            if (regex.test(email)) {
+                thongBao.innerText = "email hợp lệ!";
+                thongBao.style.color = "green";
+            } else {
+                thongBao.innerText = "email không hợp lệ!";
+                thongBao.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
